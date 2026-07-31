@@ -3,16 +3,16 @@
 ## コマンド
 
 ```bash
-yarn install
-yarn build
-yarn deploy
+pnpm install
+pnpm build
+pnpm deploy
 ```
 
 ## デプロイ
 
 ### Lambda
 
-`yarn deploy`で作成したzipファイルをLambda`trash-alert`にアップロード
+`pnpm deploy`で作成したzipファイルをLambda`trash-alert`にアップロード
 
 ### Alexa Skill
 

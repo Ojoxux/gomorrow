@@ -1,6 +1,7 @@
 {
   "name": "trash-alert",
   "version": "1.0.0",
+  "packageManager": "pnpm@10.33.3",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
@@ -15,6 +16,6 @@
   "scripts": {
     "build": "rm -rf dist && tsc",
     "start": "ts-node src/lambda/index.ts",
-    "deploy": "rm -f deployment-package.zip && yarn build && cd dist && zip -r ../deployment-package.zip . && cd .. && zip -g deployment-package.zip package.json && zip -r deployment-package.zip node_modules"
+    "deploy": "rm -f deployment-package.zip && pnpm build && cd dist && zip -r ../deployment-package.zip . && cd .. && zip -g deployment-package.zip package.json && zip -r deployment-package.zip node_modules"
   }
 }
