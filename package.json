@@ -16,6 +16,6 @@
   "scripts": {
     "build": "rm -rf dist && tsc",
     "start": "ts-node src/lambda/index.ts",
-    "deploy": "rm -f deployment-package.zip && pnpm build && cd dist && zip -r ../deployment-package.zip . && cd .. && zip -g deployment-package.zip package.json && zip -r deployment-package.zip node_modules"
+    "deploy": "rm -rf deployment-package.zip .lambda-package && pnpm build && mkdir .lambda-package && cp -R dist/. package.json pnpm-lock.yaml .lambda-package/ && cd .lambda-package && pnpm install --prod --frozen-lockfile --config.node-linker=hoisted && zip -qr ../deployment-package.zip . -x pnpm-lock.yaml && cd .. && rm -rf .lambda-package"
   }
 }
