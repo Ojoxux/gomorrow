@@ -1,6 +1,7 @@
 node_modules/
 dist/
 deployment-package.zip
+.lambda-package/
 
 *.log
 .DS_Store
